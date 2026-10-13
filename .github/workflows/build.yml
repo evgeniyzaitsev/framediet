@@ -1,11 +1,11 @@
-# Builds the Windows installer on every version tag (v*) and on manual run.
-# A tag also publishes a GitHub Release with the installer attached (pre-release for -beta/-rc tags).
+# Builds the Windows installer when a GitHub Release is published (tag v*) and attaches it to that release.
+# Manual run (workflow_dispatch) builds the installer as a downloadable artifact only.
 # Code signing (SignPath) is added once the project is approved.
 name: build-windows
 on:
   workflow_dispatch:
-  push:
-    tags: ["v*"]
+  release:
+    types: [published]
 permissions:
   contents: write
 jobs:
@@ -30,9 +30,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: dist/FrameDiet-Setup-*.exe
-          prerelease: ${{ contains(github.ref_name, '-') }}
-          generate_release_notes: false
-          body: |
-            Windows installer for FrameDiet ${{ github.ref_name }}.
-            See CHANGELOG.md for what's new. The build is not code-signed yet: Windows SmartScreen may show
-            "Unknown publisher" — click "More info" → "Run anyway".
+          tag_name: ${{ github.ref_name }}

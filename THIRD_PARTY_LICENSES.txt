@@ -1,0 +1,16 @@
+FrameDiet is free software under the GNU General Public License v3.0 or later (see LICENSE).
+It bundles the following third-party components:
+
+- libimagequant (via the "imagequant" Python bindings, BSD-3-Clause) — GPL-3.0-or-later.
+  Copyright Kornel Lesiński and contributors. https://github.com/ImageOptim/libimagequant
+- FFmpeg (binary shipped by "imageio-ffmpeg", BSD-2-Clause wrapper) — GPL build.
+  https://ffmpeg.org — source code: https://ffmpeg.org/download.html
+- Pillow — MIT-CMU (HPND) license. https://python-pillow.org
+- NumPy — BSD-3-Clause. https://numpy.org
+- CustomTkinter — CC0-1.0 (public domain dedication). https://github.com/TomSchimansky/CustomTkinter
+- tkinterdnd2 / tkdnd — MIT / BSD-style licenses. https://github.com/Eliav2/tkinterdnd2
+- darkdetect — BSD-3-Clause. https://github.com/albertosottile/darkdetect
+- Python and Tcl/Tk runtime (bundled by PyInstaller) — PSF License, Tcl/Tk BSD-style license.
+
+Full source code of FrameDiet is available from the project repository.
+- Inter typeface — SIL Open Font License 1.1 (assets/fonts/OFL.txt). https://github.com/rsms/inter

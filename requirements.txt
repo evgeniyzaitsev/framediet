@@ -1,0 +1,8 @@
+# runtime (versions tested with FrameDiet 1.2.0-beta.3)
+customtkinter==6.0.0
+darkdetect==0.8.0
+tkinterdnd2==0.6.3
+imagequant==1.1.5
+imageio-ffmpeg==0.6.0
+pillow==12.3.0
+numpy==2.5.3

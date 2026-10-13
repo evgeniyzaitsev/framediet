@@ -1,0 +1,25 @@
+# Builds the Windows installer on every tag (v*) and on manual run.
+# Code signing (SignPath) is added in stage 2 once the project is approved.
+name: build-windows
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements-build.txt
+      - run: python -m pytest -q tests
+      - run: python -m PyInstaller --noconfirm --clean framediet.spec
+      - run: choco install innosetup --no-progress -y
+      - run: iscc installer\FrameDiet.iss
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FrameDiet-windows
+          path: |
+            dist/FrameDiet-Setup-*.exe

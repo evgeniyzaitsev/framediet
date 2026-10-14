@@ -29,6 +29,21 @@ FrameDiet works offline. It does not send anything anywhere and collects no data
 The support report is only written to a file you choose; you decide whether to share it.
 Settings and presets are stored in `%APPDATA%\FrameDiet`.
 
+## Code signing policy
+
+Free code signing provided by [SignPath.io](https://signpath.io), certificate by [SignPath Foundation](https://signpath.org).
+
+- Signed artifacts: `FrameDiet-Setup-<version>.exe` and `FrameDiet.exe`, built from this repository by the
+  public GitHub Actions workflow `.github/workflows/build.yml`. Third-party binaries are not signed by us.
+- Committers and reviewers: [evgeniyzaitsev](https://github.com/evgeniyzaitsev)
+- Approvers: [evgeniyzaitsev](https://github.com/evgeniyzaitsev)
+- Every signing request is approved manually. Pull requests from outside contributors are reviewed before merge.
+
+Privacy: this program will not transfer any information to other networked systems unless specifically
+requested by the user or the person installing or operating it. See [Privacy](#privacy).
+
+Downloads: [GitHub Releases](https://github.com/evgeniyzaitsev/framediet/releases).
+
 ## Build (Windows)
 
 Run `build.bat`. It creates a virtual environment, installs pinned dependencies, runs the tests, builds
